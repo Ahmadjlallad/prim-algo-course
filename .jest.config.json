@@ -3,6 +3,9 @@
     "moduleNameMapper": {
         "@code/(.*)": [
             "<rootDir>/src/day1/$1"
+        ],
+        "@redo/(.*)": [
+            "<rootDir>/src/redo/$1"
         ]
     },
     "preset": "ts-jest"

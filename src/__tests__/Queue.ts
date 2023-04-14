@@ -1,5 +1,6 @@
-import Queue from "@code/Queue";
+//import Queue from "@code/Queue";
 
+import Queue from "@redo/Queue";
 test("queue", function () {
     const list = new Queue<number>();
 
