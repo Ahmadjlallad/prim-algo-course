@@ -1,15 +1,27 @@
-export default class MinHeap {
-    public length: number;
+export default class MinHeap<T> {
+	public length: number;
+	public data: T[];
 
-    
+	constructor() {
+		this.length = 0;
+		this.data = [];
+	}
 
-    constructor() {
-    }
+	insert(value: number): void {
+	}
 
-    insert(value: number): void {
+	delete(): number {
+	}
 
-}
-    delete(): number {
+	private parent(idx: number): number {
+		return Math.floor((idx - 1) / 2);
+	}
 
-}
+	private leftChild(idx: number): number {
+		return idx * 2 - 1;
+	}
+
+	private rightChild(idx: number): number {
+		return idx * 2 - 2;
+	}
 }
