@@ -3,7 +3,7 @@ function qs(arr: number[], lo: number, hi: number): void {
 		return;
 	}
 	const pivotIdx = partition(arr, lo, hi);
-	console.log("pivotId =", pivotIdx, "\n")
+	console.log("pivotId =", pivotIdx, "\n");
 	qs(arr, lo, pivotIdx - 1);
 	qs(arr, pivotIdx + 1, hi);
 }
@@ -11,7 +11,7 @@ function qs(arr: number[], lo: number, hi: number): void {
 function partition(arr: number[], lo: number, hi: number): number {
 	const pivot = arr[hi];
 	let idx = lo - 1;
-	console.log(`hi = ${hi}, lo = ${lo}, currentIdx = `, arr)
+	console.log(`hi = ${hi}, lo = ${lo}, currentIdx = `, arr);
 	for (let i = lo; i < hi; ++i) {
 		if (arr[i] <= pivot) {
 			idx++;
@@ -31,4 +31,4 @@ export default function quick_sort(arr: number[]): void {
 }
 
 const arr = [9, 3, 7, 4, 69, 420, 42];
-quick_sort(arr)
+quick_sort(arr);

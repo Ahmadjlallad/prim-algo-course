@@ -1,28 +1,28 @@
 {
-    "compilerOptions": {
-        "outDir": "dist",
-        "allowJs": true,
-        "noImplicitAny": true,
-        "strictNullChecks": true,
-        "resolveJsonModule": true,
-        "noImplicitReturns": true,
-        "esModuleInterop": true,
-        "target": "es6",
-        "module": "commonjs",
-        "baseUrl": "src",
-        "paths": {
-            "@code/*": [
-                "day1/*"
-            ],
-            "@redo/*": [
-                "redo/*"
-            ]
-        }
-    },
-    "include": [
-        "./src/**/*"
-    ],
-    "exclude": [
-        "node_modules"
-    ]
+  "compilerOptions": {
+    "outDir": "dist",
+    "allowJs": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "resolveJsonModule": true,
+    "noImplicitReturns": true,
+    "esModuleInterop": true,
+    "target": "es6",
+    "module": "commonjs",
+    "baseUrl": "src",
+    "paths": {
+      "@code/*": [
+        "day1/*"
+      ],
+      "@redo/*": [
+        "redo/*"
+      ]
+    }
+  },
+  "include": [
+    "./src/**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

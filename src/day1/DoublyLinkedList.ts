@@ -1,12 +1,14 @@
-const util = require('util')
+const util = require("util");
 
 type Node<T> = {
-	value: T, prev?: Node<T>, next?: Node<T>
-}
+	value: T;
+	prev?: Node<T>;
+	next?: Node<T>;
+};
 export default class DoublyLinkedList<T> {
 	public length: number;
-	private head?: Node<T>
-	private tail?: Node<T>
+	private head?: Node<T>;
+	private tail?: Node<T>;
 
 	constructor() {
 		this.length = 0;
@@ -27,7 +29,7 @@ export default class DoublyLinkedList<T> {
 
 	insertAt(item: T, idx: number): void {
 		if (idx > this.length) {
-			throw new Error('index out of bonce');
+			throw new Error("index out of bonce");
 		} else if (idx === this.length) {
 			this.append(item);
 			return;
@@ -36,7 +38,7 @@ export default class DoublyLinkedList<T> {
 			return;
 		}
 		this.length++;
-		const node: Node<T> = {value: item}
+		const node: Node<T> = {value: item};
 		let curr = this.getAt(idx) as Node<T>;
 		node.next = curr;
 		node.prev = curr?.prev;
@@ -49,7 +51,7 @@ export default class DoublyLinkedList<T> {
 
 	append(item: T): void {
 		this.length++;
-		const node: Node<T> = {value: item}
+		const node: Node<T> = {value: item};
 		if (!this.tail) {
 			this.tail = this.head = node;
 			return;
@@ -78,8 +80,8 @@ export default class DoublyLinkedList<T> {
 	}
 
 	removeAt(idx: number): T | undefined {
-		this.debugHead()
-		const node = this.getAt(idx)
+		this.debugHead();
+		const node = this.getAt(idx);
 		if (!node) {
 			return undefined;
 		}
@@ -113,11 +115,14 @@ export default class DoublyLinkedList<T> {
 		if (this.tail === node) {
 			this.head = node.prev;
 		}
-		this.debugHead()
+		this.debugHead();
 		node.prev = node.next = undefined;
-		return node.value
+		return node.value;
 	}
+
 	private debugHead() {
-		console.log(util.inspect(this.head, false, null, true /* enable colors */))
+		console.log(
+			util.inspect(this.head, false, null, true /* enable colors */),
+		);
 	}
 }

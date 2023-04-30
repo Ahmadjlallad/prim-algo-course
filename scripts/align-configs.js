@@ -1,11 +1,11 @@
 const fs = require("fs");
 const path = require("path");
 
-module.exports.stats = function(config, day_path) {
+module.exports.stats = function (config, day_path) {
     let stats;
     try {
         stats = require("../stats.json");
-    } catch(e) {
+    } catch (e) {
         stats = undefined;
     }
 
@@ -22,7 +22,7 @@ module.exports.stats = function(config, day_path) {
         JSON.stringify(stats, null, 4));
 }
 
-module.exports.package_json = function(config, day_path) {
+module.exports.package_json = function (config, day_path) {
     const package_json = require("../package.json");
     package_json.scripts.test = `jest ${config.dsa.join(" ")}`;
     package_json.scripts.day = `echo ${day_path}`;
@@ -32,7 +32,7 @@ module.exports.package_json = function(config, day_path) {
         JSON.stringify(package_json, null, 4));
 }
 
-module.exports.ts_config = function(set_to) {
+module.exports.ts_config = function (set_to) {
     const ts_config = require("../tsconfig.json");
     ts_config.compilerOptions.paths["@code/*"] = [`${set_to}/*`];
 
@@ -41,7 +41,7 @@ module.exports.ts_config = function(set_to) {
         JSON.stringify(ts_config, null, 4));
 }
 
-module.exports.jest = function(set_to) {
+module.exports.jest = function (set_to) {
     const jest = require("../.jest.config.json");
     jest.moduleNameMapper["@code/(.*)"] = [`<rootDir>/src/${set_to}/$1`];
 

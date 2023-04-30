@@ -1,11 +1,11 @@
 type Node<T> = {
-	prev?: Node<T>
-	value: T
-}
+	prev?: Node<T>;
+	value: T;
+};
 export default class Stack<T> {
 	public length = 0;
-	public tail?: Node<T>
-	public head?: Node<T>
+	public tail?: Node<T>;
+	public head?: Node<T>;
 
 	constructor() {
 		this.head = undefined;
@@ -14,8 +14,8 @@ export default class Stack<T> {
 	}
 
 	push(item: T): void {
-		this.length++
-		const node: Node<T> = {value: item}
+		this.length++;
+		const node: Node<T> = {value: item};
 		if (!this.head) {
 			this.head = node;
 			return;
@@ -25,13 +25,13 @@ export default class Stack<T> {
 	}
 
 	pop(): T | undefined {
-		this.length = Math.max(this.length - 1, 0)
+		this.length = Math.max(this.length - 1, 0);
 		if (this.length === 0) {
 			const head = this.head;
 			this.head = undefined;
 			return head?.value;
 		}
-		const head = this.head
+		const head = this.head;
 		if (!head) {
 			return undefined;
 		}

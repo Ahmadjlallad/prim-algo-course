@@ -1,11 +1,11 @@
 type Node<T> = {
-	next?: Node<T>
-	value: T
-}
+	next?: Node<T>;
+	value: T;
+};
 export default class Queue<T> {
 	public length: number;
-	public tail?: Node<T>
-	public head?: Node<T>
+	public tail?: Node<T>;
+	public head?: Node<T>;
 
 	constructor() {
 		this.head = undefined;
@@ -15,7 +15,7 @@ export default class Queue<T> {
 
 	enqueue(item: T): void {
 		this.length += 1;
-		const node: Node<T> = {value: item}
+		const node: Node<T> = {value: item};
 		if (!this.tail) {
 			this.head = this.tail = node;
 			return;

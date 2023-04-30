@@ -1,18 +1,13 @@
 export default class Trie {
-    
+	constructor() {
+	}
 
-    
+	insert(item: string): void {
+	}
 
-    constructor() {
-    }
+	delete(item: string): void {
+	}
 
-    insert(item: string): void {
-
-}
-    delete(item: string): void {
-
-}
-    find(partial: string): string[] {
-
-}
+	find(partial: string): string[] {
+	}
 }

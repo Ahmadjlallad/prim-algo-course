@@ -1,12 +1,12 @@
 {
-    "clearMocks": true,
-    "moduleNameMapper": {
-        "@code/(.*)": [
-            "<rootDir>/src/day1/$1"
-        ],
-        "@redo/(.*)": [
-            "<rootDir>/src/redo/$1"
-        ]
-    },
-    "preset": "ts-jest"
+  "clearMocks": true,
+  "moduleNameMapper": {
+    "@code/(.*)": [
+      "<rootDir>/src/day1/$1"
+    ],
+    "@redo/(.*)": [
+      "<rootDir>/src/redo/$1"
+    ]
+  },
+  "preset": "ts-jest"
 }

@@ -7,11 +7,9 @@ const src_path = path.join(__dirname, "..", "src");
 let day = 1;
 
 try {
-    day = +fs.readdirSync(src_path).
-        filter(i => i.includes("day")).
-        sort((a, b) => {
-            return +b.substring(3) - a.substring(3);
-        })[0].substring(3) + 1;
+    day = +fs.readdirSync(src_path).filter(i => i.includes("day")).sort((a, b) => {
+        return +b.substring(3) - a.substring(3);
+    })[0].substring(3) + 1;
 
     if (isNaN(day)) {
         console.log("day is nan");
@@ -24,8 +22,14 @@ try {
 const day_name = `day${day}`;
 const day_path = path.join(src_path, day_name);
 const relative_day_path = path.relative(process.cwd(), day_path);
-try { fs.unlinkSync(day_path); } catch (e) { }
-try { fs.mkdirSync(day_path); } catch (e) { }
+try {
+    fs.unlinkSync(day_path);
+} catch (e) {
+}
+try {
+    fs.mkdirSync(day_path);
+} catch (e) {
+}
 
 function generate_method(method) {
     return `${method.name}(${method.args || ""}): ${method.return || "void"} {
